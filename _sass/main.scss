@@ -22,11 +22,12 @@ body {
   color: $primary-color;
 }
 
+.break {
+  display: block;
+}
+
 header.site-header {
   padding-top: 1rem;
-  .break {
-    display: block;
-  }
 }
 
 .header-container {
@@ -115,22 +116,33 @@ header.site-header {
 }
 
 .home {
+  h2 {
+    text-align: center;
+  }
   .logo {
-    display: none;
+    width: 100%;
+    max-width: 175px;
+    display: block;
+    margin: 0 auto 1rem auto;
   }
 }
 
 
 // Desktop navigation styles
 @media (min-width: 768px) {
+  .break {
+    display: inline;
+  }
+
   .home {
     h2 {
-      text-align: center;
+      text-align: left;
     }
     .logo {
       max-width: 12rem;
       float: right;
-      margin-right: 1rem;
+      margin-left: 1rem;
+      margin-top: 3rem;
     }
     h3 {
       clear: both;
@@ -142,10 +154,6 @@ header.site-header {
     h1 {
       display: block;
       text-align: center;
-
-      .break {
-        display: inline;
-      }
     }
   }
 
