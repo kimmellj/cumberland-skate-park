@@ -1,0 +1,29 @@
+<header class="site-header">
+    <div class="wrapper">
+        <div class="header-container">
+            <h1>
+                <a class="site-title" href="{{ "" | prepend: site.baseurl | prepend: site.url }}/">
+                    Cumberland<span class="break"> </span>  Skatepark Association
+                </a>
+            </h1>
+            <a href="#" class="menu-icon"><span></span></a>
+        </div>
+
+        <nav class="site-nav">
+            <div class="menu">
+                <a class="page-link {% if page.active_nav == "home" %}selected{% endif %}" href="/">
+                    Home
+                </a>
+                <a class="page-link {% if page.active_nav == "about" %}selected{% endif %}" href="/about">
+                    About
+                </a>
+                <a class="page-link {% if page.active_nav == "board" %}selected{% endif %}" href="/board">
+                    Board
+                </a>
+                <a class="page-link {% if page.active_nav == "skating-well-being" %}selected{% endif %}" href="/skating-well-being">
+                    Skating &amp; Well Being
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,324 @@
+@use "reset";
+
+$primary-color: #333333;
+
+html {
+  font-size: 100%; /* Or simply leave it blank to respect user default */
+}
+
+body {
+  color: #333;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.site-title {
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: $primary-color;
+}
+
+header.site-header {
+  padding-top: 1rem;
+  .break {
+    display: block;
+  }
+}
+
+.header-container {
+  padding: .25rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-nav {
+  border-bottom: 2px solid $primary-color;
+  margin-bottom: 2rem;
+}
+
+.menu-icon {
+  display: block;
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: $primary-color;
+    position: relative;
+    top: 9px;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: $primary-color;
+      left: 0;
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      top: 8px;
+    }
+  }
+}
+
+.menu {
+  display: none; // Hidden by default on mobile
+}
+
+.menu.is-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 10;
+
+  a {
+    font-size: 2rem;
+    padding: 1rem 1rem .25rem 1rem;
+    border: none; // Remove desktop border
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+      background: $primary-color;
+      color: #fff;
+    }
+
+    &.selected {
+      border-bottom: 1px solid $primary-color;
+    }
+  }
+}
+
+.home {
+  .logo {
+    display: none;
+  }
+}
+
+
+// Desktop navigation styles
+@media (min-width: 768px) {
+  .home {
+    h2 {
+      text-align: center;
+    }
+    .logo {
+      max-width: 12rem;
+      float: right;
+      margin-right: 1rem;
+    }
+    h3 {
+      clear: both;
+    }
+  }
+
+  .header-container {
+    display: block;
+    h1 {
+      display: block;
+      text-align: center;
+
+      .break {
+        display: inline;
+      }
+    }
+  }
+
+  .site-nav {
+    border-bottom: 2px solid $primary-color;
+    border-top: 2px solid $primary-color;
+    padding: 1rem 0;
+    margin: 1rem 0 3rem 0;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    text-align: center;
+
+    a {
+      border-right: 1px solid $primary-color;
+      padding: .5rem;
+      color: $primary-color;
+      font-family: "Questrial", sans-serif;
+      text-decoration: none;
+      font-size: initial; // Reset mobile font size
+
+      &:hover {
+        background: $primary-color;
+        color: #fff;
+      }
+
+      &.selected {
+        font-weight: bold;
+      }
+    }
+
+    a:last-child {
+      border-right: 0;
+    }
+  }
+
+  .menu.is-open {
+    // Reset mobile overlay styles
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    flex-direction: row;
+    justify-content: initial;
+    align-items: initial;
+  }
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+p {
+  margin: 1rem 0;
+}
+
+ul {
+  padding: 0 1rem;            /* Inner spacing */
+  list-style-type: disc;    /* Ensure default disc style */
+}
+
+ul li {
+  margin: 5px 0;            /* Spacing between list items */
+  color: $primary-color;              /* Darker text color for readability */
+  line-height: 1.4;         /* Improved readability with more vertical space */
+}
+
+.hero {
+  width: 100%;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  margin: 0 0 2rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 2.1rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  border-left: .5rem solid $primary-color;
+  padding: .5rem;
+  margin: 1rem 0;
+  line-height: 1.85rem;
+}
+
+.site-footer {
+  background-color: $primary-color;
+  color: #fff;
+  border-top: .3rem solid $primary-color;
+  margin-top: 3rem;
+
+  .footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer-col {
+    flex: 1 1 50%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    /* Added text-align: center for mobile */
+    text-align: left;
+  }
+
+  /* Target the "Follow Us" column (second .footer-col) */
+  .footer-col:nth-child(2) {
+    /* Right align for desktop */
+      text-align: right;
+  }
+
+  .footer-col:last-child {
+    flex-basis: 100%;
+    text-align: center;
+    padding-top: 1rem; /* Add some space above copyright */
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin: 0.25rem 0; /* Reduced margin */
+    border-left: none;
+    padding-left: 0;
+    /* On desktop, align left for first column, right for second */
+    @media (min-width: 768px) {
+      text-align: left; /* Default for first col */
+    }
+  }
+
+  /* Specific alignment for the second h3 on desktop */
+  .footer-col:nth-child(2) h3 {
+    @media (min-width: 768px) {
+      text-align: right;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 0.25rem; /* Reduced margin */
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
+}
+
+.home {
+  hr {
+    margin: 1rem 0;
+  }
+}

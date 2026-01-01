@@ -1,0 +1,14 @@
+{
+  "name": "Cumberland Skate Park (Jekyll)",
+  "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye",
+  "forwardPorts": [
+    4000
+  ],
+  "postCreateCommand": "bundle install",
+  "remoteUser": "vscode",
+  "customizations": {
+    "jetbrains": {
+      "backend": "IntelliJ"
+    }
+  }
+}
