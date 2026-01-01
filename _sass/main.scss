@@ -1,7 +1,15 @@
 @use "reset";
 
+$primary-color: #333333;
+
+html {
+  font-size: 100%; /* Or simply leave it blank to respect user default */
+}
+
 body {
   color: #333;
+  font-family: sans-serif;
+  font-size: 16px;
 }
 
 .site-title {
@@ -10,12 +18,46 @@ body {
   font-style: normal;
   font-size: 1.25rem;
   text-decoration: none;
-  color: #333333;
+  color: $primary-color;
 }
 
 header.site-header {
   padding-top: 1rem;
   text-align: center;
+}
+
+.site-nav {
+  border-bottom: 2px solid $primary-color;
+  border-top: 2px solid $primary-color;
+
+  padding: 1rem 0;
+  margin: 1rem 0 3rem 0;
+
+  .menu {
+    a {
+      border-right: 1px solid $primary-color;
+      padding: .5rem;
+      font-weight: bold;
+      color: $primary-color;
+      font-family: "Questrial", sans-serif;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a.selected {
+      background: $primary-color;
+      color: #fff;
+    }
+
+    a:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+main {
+  max-width: 1024px;
+  margin: auto;
 }
 
 .hero {
@@ -25,14 +67,19 @@ header.site-header {
   margin: 0 0 2rem 0;
 }
 
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
 h2 {
-  border-left: .5rem solid #333;
+  border-left: .5rem solid $primary-color;
   padding-left: .5rem;
 }
 
 
 .site-footer {
-  border-top: .3rem solid #333;
+  border-top: .3rem solid $primary-color;
 }
 
 .home {

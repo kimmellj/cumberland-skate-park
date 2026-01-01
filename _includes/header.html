@@ -1,17 +1,26 @@
 <header class="site-header">
     <div class="wrapper">
         <a class="site-title" href="{{ "" | prepend: site.baseurl | prepend: site.url }}/">
-<!--            <img src="{{ "/assets/img/logo.svg" | absolute_url }}" alt="{{ site.title }}" />-->
-            Cumberland Skatepark Association
+        <!--            <img src="{{ "/assets/img/logo.svg" | absolute_url }}" alt="{{ site.title }}" />-->
+        Cumberland Skatepark Association
         </a>
 
         <nav class="site-nav">
             <a href="#" class="menu-icon"></a>
 
             <div class="menu">
-                    <a class="page-link" href="/about">
-                        About
-                    </a>
+                <a class="page-link {% if page.active_nav == "home" %}selected{% endif %}" href="/">
+                    Home
+                </a>
+                <a class="page-link {% if page.active_nav == "about" %}selected{% endif %}" href="/about">
+                    About
+                </a>
+                <a class="page-link {% if page.active_nav == "board" %}selected{% endif %}" href="/board">
+                    Board
+                </a>
+                <a class="page-link {% if page.active_nav == "skating-well-being" %}selected{% endif %}" href="/skating-well-being">
+                    Skating &amp; Well Being
+                </a>
             </div>
         </nav>
     </div>
