@@ -23,41 +23,184 @@ body {
 
 header.site-header {
   padding-top: 1rem;
-  text-align: center;
+  .break {
+    display: block;
+  }
+}
+
+.header-container {
+  padding: .25rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .site-nav {
   border-bottom: 2px solid $primary-color;
-  border-top: 2px solid $primary-color;
+  margin-bottom: 2rem;
+}
 
-  padding: 1rem 0;
-  margin: 1rem 0 3rem 0;
+.menu-icon {
+  display: block;
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: $primary-color;
+    position: relative;
+    top: 9px;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: $primary-color;
+      left: 0;
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      top: 8px;
+    }
+  }
+}
+
+.menu {
+  display: none; // Hidden by default on mobile
+}
+
+.menu.is-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 10;
+
+  a {
+    font-size: 2rem;
+    padding: 1rem 1rem .25rem 1rem;
+    border: none; // Remove desktop border
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+      background: $primary-color;
+      color: #fff;
+    }
+
+    &.selected {
+      border-bottom: 1px solid $primary-color;
+    }
+  }
+}
+
+
+// Desktop navigation styles
+@media (min-width: 768px) {
+  .header-container {
+    display: block;
+    h1 {
+      display: block;
+      text-align: center;
+
+      .break {
+        display: inline;
+      }
+    }
+  }
+
+  .site-nav {
+    border-bottom: 2px solid $primary-color;
+    border-top: 2px solid $primary-color;
+    padding: 1rem 0;
+    margin: 1rem 0 3rem 0;
+  }
+
+  .menu-icon {
+    display: none;
+  }
 
   .menu {
+    display: block;
+    text-align: center;
+
     a {
       border-right: 1px solid $primary-color;
       padding: .5rem;
-      font-weight: bold;
       color: $primary-color;
       font-family: "Questrial", sans-serif;
       text-decoration: none;
-    }
+      font-size: initial; // Reset mobile font size
 
-    a:hover,
-    a.selected {
-      background: $primary-color;
-      color: #fff;
+      &:hover {
+        background: $primary-color;
+        color: #fff;
+      }
+
+      &.selected {
+        font-weight: bold;
+      }
     }
 
     a:last-child {
       border-right: 0;
     }
   }
+
+  .menu.is-open {
+    // Reset mobile overlay styles
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    flex-direction: row;
+    justify-content: initial;
+    align-items: initial;
+  }
 }
 
 main {
-  max-width: 1024px;
-  margin: auto;
+  max-width: 900px;
+  margin: 0 auto;
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+p {
+  margin: 1rem 0;
+}
+
+ul {
+  padding: 0 1rem;            /* Inner spacing */
+  list-style-type: disc;    /* Ensure default disc style */
+}
+
+ul li {
+  margin: 5px 0;            /* Spacing between list items */
+  color: $primary-color;              /* Darker text color for readability */
+  line-height: 1.4;         /* Improved readability with more vertical space */
 }
 
 .hero {
@@ -67,14 +210,17 @@ main {
   margin: 0 0 2rem 0;
 }
 
-h1 {
-  font-size: 3rem;
+h2 {
+  font-size: 2rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-h2 {
+h3 {
+  font-size: 1.75rem;
   border-left: .5rem solid $primary-color;
-  padding-left: .5rem;
+  padding: .5rem;
+  margin: 1rem 0;
 }
 
 
