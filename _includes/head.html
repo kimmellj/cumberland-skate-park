@@ -61,9 +61,9 @@
     {% endif %}
 
 
-    <link rel="stylesheet" href="{{ "/assets/css/styles.css" | absolute_url }}"/>
+    <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}?v={{ site.time | date: '%s' }}"/>
     <link rel="canonical" href="{{ page_url }}"/>
-    <link rel="shortcut icon" href="{{ "/assets/favicon.ico" | absolute_url }}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{ "/assets/favicon.ico" | relative_url }}" type="image/x-icon"/>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

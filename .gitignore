@@ -7,3 +7,4 @@ vendor
 .wrangler
 
 .aider*
+node_modules/
