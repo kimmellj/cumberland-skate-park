@@ -1,7 +1,9 @@
 @use "reset";
 
+// Color palette
 $primary-color: #333333;
 
+// Base typography
 html {
   font-size: 100%; /* Or simply leave it blank to respect user default */
 }
@@ -13,6 +15,7 @@ body {
   line-height: 22px;
 }
 
+// Header styles
 .site-title {
   font-family: "Questrial", sans-serif;
   font-weight: 400;
@@ -80,6 +83,7 @@ header.site-header {
   }
 }
 
+// Mobile menu
 .menu {
   display: none; // Hidden by default on mobile
 }
@@ -115,10 +119,12 @@ header.site-header {
   }
 }
 
+// Homepage styles
 .home {
   h2 {
     text-align: center;
   }
+
   .logo {
     width: 100%;
     max-width: 175px;
@@ -126,7 +132,6 @@ header.site-header {
     margin: 0 auto 1rem auto;
   }
 }
-
 
 // Desktop navigation styles
 @media (min-width: 768px) {
@@ -138,12 +143,14 @@ header.site-header {
     h2 {
       text-align: left;
     }
+
     .logo {
       max-width: 12rem;
       float: right;
       margin-left: 1rem;
       margin-top: 3rem;
     }
+
     h3 {
       clear: both;
     }
@@ -151,6 +158,7 @@ header.site-header {
 
   .header-container {
     display: block;
+
     h1 {
       display: block;
       text-align: center;
@@ -208,6 +216,7 @@ header.site-header {
   }
 }
 
+// Main content styles
 main {
   max-width: 900px;
   margin: 0 auto;
@@ -217,6 +226,7 @@ main {
   }
 }
 
+// Typography styles
 p {
   margin: 1rem 0;
 }
@@ -232,6 +242,7 @@ ul li {
   line-height: 1.4;         /* Improved readability with more vertical space */
 }
 
+// Hero image styles
 .hero {
   width: 100%;
   border-top-right-radius: 1rem;
@@ -239,6 +250,7 @@ ul li {
   margin: 0 0 2rem 0;
 }
 
+// Heading styles
 h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -254,6 +266,7 @@ h3 {
   line-height: 1.85rem;
 }
 
+// Footer styles
 .site-footer {
   background-color: $primary-color;
   color: #fff;
@@ -279,7 +292,7 @@ h3 {
   /* Target the "Follow Us" column (second .footer-col) */
   .footer-col:nth-child(2) {
     /* Right align for desktop */
-      text-align: right;
+    text-align: right;
   }
 
   .footer-col:last-child {
@@ -325,6 +338,7 @@ h3 {
   }
 }
 
+// Homepage specific styles
 .home {
   hr {
     margin: 1rem 0;
