@@ -344,3 +344,201 @@ h3 {
     margin: 1rem 0;
   }
 }
+
+// Flyer Banner Card Component
+.flyer-card {
+  position: relative;
+  background-color: #1e1f23; // Flat gray background mimicking the original flyer
+  color: #ffffff;
+  padding: 3rem 1.5rem 2.5rem 1.5rem;
+  margin: 0 0 2.5rem 0;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  h1, h2, h3 {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    line-height: 1.15;
+  }
+
+  .flyer-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  // Titles
+  .flyer-title-main {
+    font-family: 'Pirata One', 'Germania One', cursive, serif;
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .flyer-title-sub,
+  .flyer-title-fest {
+    font-family: 'Germania One', 'Playfair Display', serif;
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 1.15;
+    color: #ffffff;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .flyer-title-fest {
+    margin-bottom: 1.5rem;
+  }
+
+  // Graphic
+  .flyer-graphic {
+    margin: 1.25rem auto 1.75rem auto;
+
+    .flyer-heart-img {
+      max-width: 330px;
+      width: 82%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+    }
+  }
+
+  // Details
+  .flyer-activities {
+    font-family: 'Germania One', 'Playfair Display', serif;
+    font-size: 1.45rem;
+    line-height: 1.35;
+    color: #ffffff;
+    margin: 0 0 1.25rem 0;
+    letter-spacing: 0.02em;
+  }
+
+  .flyer-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.55rem;
+    line-height: 1.3;
+    color: #ffffff;
+    margin: 0 0 2rem 0;
+    letter-spacing: 0.03em;
+  }
+
+  // Callout
+  .flyer-join {
+    font-family: 'Pirata One', 'Germania One', serif;
+    font-size: 2.4rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+  }
+
+  .flyer-dates {
+    font-family: 'Germania One', 'Playfair Display', serif;
+    font-size: 1.45rem;
+    line-height: 1.35;
+    color: #ffffff;
+    margin: 0 0 2rem 0;
+    letter-spacing: 0.02em;
+  }
+
+  // Footer / Info
+  .flyer-info-text {
+    font-family: 'Germania One', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .flyer-link {
+    font-family: 'Germania One', 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: #ffffff;
+    text-decoration: underline;
+    word-break: break-word;
+    transition: color 0.2s ease, opacity 0.2s ease;
+
+    &:hover {
+      color: #dddddd;
+      opacity: 0.9;
+    }
+  }
+
+  // Corner Checkerboard SVGs
+  .flyer-checkerboard {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    width: 85px;
+    height: 85px;
+    pointer-events: none;
+
+    &.flyer-checker-left {
+      left: 0;
+    }
+
+    &.flyer-checker-right {
+      right: 0;
+    }
+  }
+
+  // Responsive breakpoints
+  @media (max-width: 600px) {
+    padding: 2rem 1rem 2rem 1rem;
+
+    .flyer-title-main {
+      font-size: 2.2rem;
+    }
+
+    .flyer-title-sub,
+    .flyer-title-fest {
+      font-size: 1.9rem;
+    }
+
+    .flyer-heart-img {
+      max-width: 250px;
+    }
+
+    .flyer-activities {
+      font-size: 1.25rem;
+    }
+
+    .flyer-tagline {
+      font-size: 1.3rem;
+    }
+
+    .flyer-join {
+      font-size: 1.95rem;
+    }
+
+    .flyer-dates {
+      font-size: 1.25rem;
+    }
+
+    .flyer-info-text {
+      font-size: 1.05rem;
+    }
+
+    .flyer-link {
+      font-size: 1.15rem;
+    }
+
+    .flyer-checkerboard {
+      width: 55px;
+      height: 55px;
+    }
+  }
+}
